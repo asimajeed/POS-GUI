@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="ChoiceWindow">
+    <property name="width-request">445</property>
+    <property name="height-request">69</property>
+    <property name="can-focus">False</property>
+    <property name="resizable">False</property>
+    <property name="default-width">445</property>
+    <property name="default-height">69</property>
+    <property name="icon-name">application-x-executable</property>
+    <child>
+      <object class="GtkFixed" id="fixed3">
+        <property name="width-request">0</property>
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkButton" id="CheckoutButton">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_CheckoutButton_clicked" swapped="no"/>
+            <child>
+              <object class="GtkFixed" id="buttonfixed">
+                <property name="height-request">0</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkLabel" id="labelx">
+                    <property name="height-request">40</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Checkout Customer</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Sans Bold 15"/>
+                      <attribute name="foreground" value="#1a1a5f5fb4b4"/>
+                    </attributes>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">10</property>
+            <property name="y">10</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="EditButton">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_EditButton_clicked" swapped="no"/>
+            <child>
+              <object class="GtkFixed" id="fixed4">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkLabel" id="labely">
+                    <property name="height-request">40</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Edit Backend Data</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Sans Bold 15"/>
+                    </attributes>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">231</property>
+            <property name="y">10</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkEntryBuffer" id="GSTbuf">
+    <property name="text" translatable="yes">0</property>
+  </object>
+  <object class="GtkTextBuffer" id="billbuffer"/>
+  <object class="GtkTextBuffer" id="cartbuffer"/>
+  <object class="GtkEntryBuffer" id="cashiername"/>
+  <object class="GtkTextBuffer" id="databasebuffer"/>
+  <object class="GtkEntryBuffer" id="discountbuf">
+    <property name="text" translatable="yes">0</property>
+  </object>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="pixbuf">download.png</property>
+    <property name="icon_size">2</property>
+  </object>
+  <object class="GtkImage" id="image3">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="tooltip-text" translatable="yes">Press to start POS!</property>
+    <property name="pixbuf">start.png</property>
+  </object>
+  <object class="GtkEntryBuffer" id="itemnobuffer"/>
+  <object class="GtkTextBuffer" id="message">
+    <property name="text" translatable="yes">WELCOME TO WEMART POS TERMINAL!</property>
+  </object>
+  <object class="GtkWindow" id="EditWindow">
+    <property name="width-request">-1</property>
+    <property name="height-request">-1</property>
+    <property name="can-focus">False</property>
+    <property name="resizable">False</property>
+    <property name="default-width">-1</property>
+    <property name="icon-name">application-x-executable</property>
+    <child>
+      <object class="GtkFixed" id="editfixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkButton" id="quit2">
+            <property name="label">gtk-quit</property>
+            <property name="width-request">61</property>
+            <property name="height-request">44</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="use-stock">True</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="on_quit2_clicked" swapped="no"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEntry" id="EditNumber">
+            <property name="width-request">60</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="width-chars">9</property>
+            <property name="max-width-chars">5</property>
+            <property name="placeholder-text" translatable="yes">ItemNo</property>
+            <property name="input-purpose">number</property>
+          </object>
+          <packing>
+            <property name="x">2</property>
+            <property name="y">48</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="ItemStock">
+            <property name="width-request">54</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="width-chars">7</property>
+            <property name="max-width-chars">6</property>
+            <property name="placeholder-text" translatable="yes">Stock</property>
+          </object>
+          <packing>
+            <property name="x">329</property>
+            <property name="y">48</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="AddButton">
+            <property name="label">gtk-add</property>
+            <property name="width-request">128</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Requires ALL FIELDS</property>
+            <property name="use-stock">True</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="on_AddButton_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">4</property>
+            <property name="y">88</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="RemoveButton">
+            <property name="label">gtk-delete</property>
+            <property name="width-request">128</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Requires ItemNo ONLY</property>
+            <property name="use-stock">True</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="on_RemoveButton_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">133</property>
+            <property name="y">88</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="EditPrice">
+            <property name="width-request">90</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="width-chars">12</property>
+            <property name="max-width-chars">12</property>
+            <property name="placeholder-text" translatable="yes">Item Price</property>
+          </object>
+          <packing>
+            <property name="x">238</property>
+            <property name="y">48</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="EditItemName">
+            <property name="width-request">162</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="width-chars">24</property>
+            <property name="max-width-chars">24</property>
+            <property name="placeholder-text" translatable="yes">Item Name</property>
+          </object>
+          <packing>
+            <property name="x">75</property>
+            <property name="y">48</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="UpdateButton">
+            <property name="label" translatable="yes">Update Stock</property>
+            <property name="width-request">128</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Requires ItemNo and Stock ONLY</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="on_UpdateButton_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">262</property>
+            <property name="y">88</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scroll5">
+            <property name="width-request">327</property>
+            <property name="height-request">0</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="min-content-height">21</property>
+            <child>
+              <object class="GtkTextView" id="msgdisplay1">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="margin-bottom">4</property>
+                <property name="editable">False</property>
+                <property name="cursor-visible">False</property>
+                <property name="buffer">message</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">62</property>
+            <property name="y">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkEntryBuffer" id="quanbuffer"/>
+  <object class="GtkWindow" id="startWindow">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">Start Button</property>
+    <property name="resizable">False</property>
+    <property name="default-width">200</property>
+    <property name="default-height">130</property>
+    <property name="icon-name">application-x-executable</property>
+    <child>
+      <object class="GtkFixed" id="fixed2">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkButton" id="startButton">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="image">image3</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="on_startButton_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">33</property>
+            <property name="y">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="passEntry">
+            <property name="width-request">138</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="tooltip-text" translatable="yes">Enter password here</property>
+            <property name="buffer">quanbuffer</property>
+            <property name="max-length">12</property>
+            <property name="width-chars">20</property>
+            <property name="max-width-chars">12</property>
+            <property name="placeholder-text" translatable="yes">Enter Password Here</property>
+            <property name="input-purpose">password</property>
+          </object>
+          <packing>
+            <property name="x">33</property>
+            <property name="y">88</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkEntryBuffer" id="tenderedbuffer"/>
+  <object class="GtkTextBuffer" id="totalbuffer"/>
+  <object class="GtkWindow" id="window">
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">POS Terminal</property>
+    <property name="resizable">False</property>
+    <property name="icon-name">computer</property>
+    <child>
+      <object class="GtkFixed" id="fixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="valign">center</property>
+        <child>
+          <object class="GtkLabel" id="itemlabel">
+            <property name="width-request">110</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Item Database:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Oblique 11"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">71</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="billlabel">
+            <property name="width-request">110</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Customer Bill:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Oblique 11"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">496</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="cartlabel">
+            <property name="width-request">99</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Customer Cart:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Oblique 11"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">507</property>
+            <property name="y">401</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="cashlabel">
+            <property name="width-request">53</property>
+            <property name="height-request">20</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Cashier:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Oblique 11"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">3</property>
+            <property name="y">304</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="quanlabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Quantity:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Oblique 11"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="y">374</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="itemn">
+            <property name="name">itemnumber</property>
+            <property name="width-request">58</property>
+            <property name="height-request">20</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Item No:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Oblique 11"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="y">340</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="cashier">
+            <property name="width-request">170</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">cashiername</property>
+            <property name="max-length">19</property>
+            <property name="max-width-chars">18</property>
+            <property name="caps-lock-warning">False</property>
+            <property name="input-purpose">name</property>
+            <signal name="changed" handler="on_cashier_changed" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">63</property>
+            <property name="y">296</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="itemnum">
+            <property name="width-request">170</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">itemnobuffer</property>
+            <property name="max-length">19</property>
+            <property name="max-width-chars">30</property>
+            <property name="caps-lock-warning">False</property>
+            <property name="input-purpose">name</property>
+          </object>
+          <packing>
+            <property name="x">63</property>
+            <property name="y">332</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="quant">
+            <property name="width-request">168</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">quanbuffer</property>
+            <property name="max-length">19</property>
+            <property name="max-width-chars">30</property>
+            <property name="caps-lock-warning">False</property>
+            <property name="input-purpose">name</property>
+          </object>
+          <packing>
+            <property name="x">64</property>
+            <property name="y">368</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="totallabel">
+            <property name="width-request">36</property>
+            <property name="height-request">20</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Total:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Oblique 11"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">6</property>
+            <property name="y">423</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="dislabel">
+            <property name="width-request">80</property>
+            <property name="height-request">20</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Discount %:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Oblique 11"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">240</property>
+            <property name="y">300</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="GSTlabel">
+            <property name="width-request">31</property>
+            <property name="height-request">20</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">GST:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Oblique 11"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">380</property>
+            <property name="y">300</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="addtocart">
+            <property name="label" translatable="yes">Add to cart</property>
+            <property name="width-request">231</property>
+            <property name="height-request">78</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="image">image1</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="on_addtocart_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">251</property>
+            <property name="y">334</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="tenderedlabel">
+            <property name="width-request">112</property>
+            <property name="height-request">20</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Money Tendered:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Oblique 11"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">196</property>
+            <property name="y">428</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="generate">
+            <property name="label" translatable="yes">Generate Bill</property>
+            <property name="width-request">346</property>
+            <property name="height-request">50</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_generate_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">21</property>
+            <property name="y">483</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="discountent">
+            <property name="width-request">42</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">discountbuf</property>
+            <property name="max-length">12</property>
+            <property name="width-chars">4</property>
+            <property name="max-width-chars">5</property>
+            <property name="caps-lock-warning">False</property>
+            <property name="primary-icon-tooltip-text" translatable="yes">Valid from 0.0% to 100.0%</property>
+            <property name="input-purpose">digits</property>
+          </object>
+          <packing>
+            <property name="x">325</property>
+            <property name="y">293</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="GSTent">
+            <property name="width-request">42</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">GSTbuf</property>
+            <property name="max-length">12</property>
+            <property name="width-chars">4</property>
+            <property name="max-width-chars">5</property>
+            <property name="caps-lock-warning">False</property>
+            <property name="secondary-icon-tooltip-text" translatable="yes">Valid from 0.0% to 100.0%</property>
+            <property name="input-purpose">number</property>
+          </object>
+          <packing>
+            <property name="x">415</property>
+            <property name="y">293</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkTextView" id="totalview">
+            <property name="width-request">124</property>
+            <property name="height-request">33</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="valign">center</property>
+            <property name="hexpand">False</property>
+            <property name="vexpand">False</property>
+            <property name="pixels-above-lines">6</property>
+            <property name="editable">False</property>
+            <property name="justification">right</property>
+            <property name="top-margin">6</property>
+            <property name="cursor-visible">False</property>
+            <property name="buffer">totalbuffer</property>
+            <property name="accepts-tab">False</property>
+          </object>
+          <packing>
+            <property name="x">55</property>
+            <property name="y">416</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="tenderedentry">
+            <property name="width-request">133</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">tenderedbuffer</property>
+            <property name="max-length">14</property>
+            <property name="width-chars">0</property>
+            <property name="max-width-chars">14</property>
+            <property name="input-purpose">number</property>
+            <signal name="changed" handler="on_tenderedentry_changed" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">317</property>
+            <property name="y">420</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="changelabel">
+            <property name="width-request">59</property>
+            <property name="height-request">20</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Change: </property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Oblique 11"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="y">455</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scroll1">
+            <property name="width-request">500</property>
+            <property name="height-request">218</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkTextView" id="itemdisplay">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="hexpand">False</property>
+                <property name="vexpand">False</property>
+                <property name="editable">False</property>
+                <property name="wrap-mode">char</property>
+                <property name="cursor-visible">False</property>
+                <property name="buffer">databasebuffer</property>
+                <property name="accepts-tab">False</property>
+                <property name="input-purpose">name</property>
+                <property name="monospace">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">2</property>
+            <property name="y">28</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scroll2">
+            <property name="width-request">365</property>
+            <property name="height-request">380</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkTextView" id="BillDisplay">
+                <property name="width-request">362</property>
+                <property name="height-request">400</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="editable">False</property>
+                <property name="cursor-visible">False</property>
+                <property name="buffer">billbuffer</property>
+                <property name="monospace">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">507</property>
+            <property name="y">27</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scroll3">
+            <property name="width-request">365</property>
+            <property name="height-request">121</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkTextView" id="cartdisplay">
+                <property name="width-request">365</property>
+                <property name="height-request">121</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="editable">False</property>
+                <property name="cursor-visible">False</property>
+                <property name="buffer">cartbuffer</property>
+                <property name="monospace">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">508</property>
+            <property name="y">424</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scroll4">
+            <property name="width-request">499</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="min-content-height">21</property>
+            <child>
+              <object class="GtkTextView" id="msgdisplay">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="margin-bottom">4</property>
+                <property name="editable">False</property>
+                <property name="cursor-visible">False</property>
+                <property name="buffer">message</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">2</property>
+            <property name="y">247</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="abortButton">
+            <property name="label">gtk-cancel</property>
+            <property name="width-request">117</property>
+            <property name="height-request">68</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="use-stock">True</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="on_abortButton_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">379</property>
+            <property name="y">465</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="quitButton">
+            <property name="label">gtk-quit</property>
+            <property name="width-request">70</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="use-stock">True</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="on_quitButton_clicked" swapped="no"/>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
